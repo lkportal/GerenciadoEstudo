@@ -43,25 +43,19 @@ namespace GerenciadoEstudo {
                 adpter.Fill(dt);
                 Tarefas tf = new Tarefas();
                 foreach (DataRow linhas in dt.Rows) {
-                   
-                    if (linhas["NOME"].ToString() == user.nome && linhas["IDENTIFICADOR"].ToString() == user.senha){
+                    if (linhas["NOME"].ToString() == user.nome && linhas["IDENTIFICADOR"].ToString() == user.senha) {
                         tf.ShowDialog();
                     }
                     else {
                         MessageBox.Show("Senha ou usuario errado");
                     }
-
                 }
-
-
-
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
-                return;
+        
             } finally {
                 conecta.Close();
-                cmd.Dispose();
-               
+                cmd.Dispose(); 
             }
         }
 
