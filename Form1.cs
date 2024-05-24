@@ -15,6 +15,7 @@ using GerenciadoEstudo.view;
 namespace GerenciadoEstudo {
     public partial class Form1 : Form {
         Usuario user;
+
         public Form1() {
             InitializeComponent();
         }
@@ -41,10 +42,12 @@ namespace GerenciadoEstudo {
                 cmd.Parameters.AddWithValue("@SENHA", user.senha);
                 SqlDataAdapter adpter = new SqlDataAdapter(cmd);
                 adpter.Fill(dt);
-                Tarefas tf = new Tarefas();
+               
                 foreach (DataRow linhas in dt.Rows) {
                     if (linhas["NOME"].ToString() == user.nome && linhas["IDENTIFICADOR"].ToString() == user.senha) {
+                        Tarefas tf = new Tarefas(linhas["NOME"].ToString());
                         tf.ShowDialog();
+                       
                     }
                     else {
                         MessageBox.Show("Senha ou usuario errado");
@@ -55,7 +58,10 @@ namespace GerenciadoEstudo {
         
             } finally {
                 conecta.Close();
-                cmd.Dispose(); 
+                cmd.Dispose();
+                txtNomeLogin.Text = "";
+                txtIdentificadorLogin.Text = "";
+                
             }
         }
 
@@ -72,7 +78,8 @@ namespace GerenciadoEstudo {
 
                 if (txtIdentificadorCadastrar.Text != "" && txtNomeCadastrar.Text != "") {
                     user = new Usuario(txtNomeCadastrar.Text, txtIdentificadorCadastrar.Text);
-                    comando.Parameters.AddWithValue("@NOME", user.nome.ToLower());
+           
+                    comando.Parameters.AddWithValue("@NOME",user.nome.ToLower());
                     comando.Parameters.AddWithValue("@NIVEL", user.nivel);
                     comando.Parameters.AddWithValue("@IDENTIFICADOR", user.senha.ToLower());
                     comando.ExecuteNonQuery();

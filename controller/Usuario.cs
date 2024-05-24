@@ -12,12 +12,12 @@ namespace GerenciadoEstudo.controller {
 
         public Usuario() { }
         public Usuario(string nome, int nivel, string senha) {
-            this.nome = nome;
+           this.nome = nome;
             this.nivel = nivel;
             this.senha = senha;
         }
         public Usuario(string nome, string senha) {
-            this.nome = nome;
+           this.nome = nome;
             this.senha = senha;
         }
 
