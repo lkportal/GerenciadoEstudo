@@ -40,7 +40,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateDay = new System.Windows.Forms.TextBox();
             this.timeHours = new System.Windows.Forms.TextBox();
-            this.labelteste = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lista = new System.Windows.Forms.DataGridView();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNome
@@ -55,7 +61,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 34);
+            this.label2.Location = new System.Drawing.Point(81, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 25);
             this.label2.TabIndex = 1;
@@ -64,7 +70,7 @@
             // lv
             // 
             this.lv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lv.Location = new System.Drawing.Point(58, 34);
+            this.lv.Location = new System.Drawing.Point(141, 9);
             this.lv.Name = "lv";
             this.lv.Size = new System.Drawing.Size(50, 25);
             this.lv.TabIndex = 2;
@@ -73,7 +79,7 @@
             // btnCompletar
             // 
             this.btnCompletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompletar.Location = new System.Drawing.Point(343, 369);
+            this.btnCompletar.Location = new System.Drawing.Point(71, 384);
             this.btnCompletar.Name = "btnCompletar";
             this.btnCompletar.Size = new System.Drawing.Size(144, 37);
             this.btnCompletar.TabIndex = 3;
@@ -85,7 +91,7 @@
             // 
             this.txtMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMateria.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtMateria.Location = new System.Drawing.Point(16, 107);
+            this.txtMateria.Location = new System.Drawing.Point(12, 62);
             this.txtMateria.Name = "txtMateria";
             this.txtMateria.Size = new System.Drawing.Size(235, 24);
             this.txtMateria.TabIndex = 4;
@@ -93,7 +99,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 79);
+            this.label4.Location = new System.Drawing.Point(12, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 5;
@@ -102,7 +108,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 79);
+            this.label5.Location = new System.Drawing.Point(12, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 25);
             this.label5.TabIndex = 7;
@@ -111,7 +117,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(374, 79);
+            this.label6.Location = new System.Drawing.Point(152, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 25);
             this.label6.TabIndex = 9;
@@ -121,7 +127,7 @@
             // 
             this.txtPlataforma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlataforma.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtPlataforma.Location = new System.Drawing.Point(16, 177);
+            this.txtPlataforma.Location = new System.Drawing.Point(12, 117);
             this.txtPlataforma.Name = "txtPlataforma";
             this.txtPlataforma.Size = new System.Drawing.Size(235, 24);
             this.txtPlataforma.TabIndex = 10;
@@ -130,16 +136,16 @@
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtDescricao.Location = new System.Drawing.Point(526, 107);
+            this.txtDescricao.Location = new System.Drawing.Point(16, 246);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(235, 199);
+            this.txtDescricao.Size = new System.Drawing.Size(235, 105);
             this.txtDescricao.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 149);
+            this.label3.Location = new System.Drawing.Point(8, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 25);
             this.label3.TabIndex = 12;
@@ -148,7 +154,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(522, 79);
+            this.label7.Location = new System.Drawing.Point(12, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 25);
             this.label7.TabIndex = 13;
@@ -158,7 +164,7 @@
             // 
             this.dateDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDay.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dateDay.Location = new System.Drawing.Point(269, 108);
+            this.dateDay.Location = new System.Drawing.Point(12, 163);
             this.dateDay.Name = "dateDay";
             this.dateDay.Size = new System.Drawing.Size(100, 24);
             this.dateDay.TabIndex = 14;
@@ -167,27 +173,64 @@
             // 
             this.timeHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeHours.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.timeHours.Location = new System.Drawing.Point(375, 109);
+            this.timeHours.Location = new System.Drawing.Point(136, 163);
             this.timeHours.MaxLength = 4;
             this.timeHours.Name = "timeHours";
             this.timeHours.Size = new System.Drawing.Size(100, 24);
             this.timeHours.TabIndex = 15;
             // 
-            // labelteste
+            // button1
             // 
-            this.labelteste.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelteste.Location = new System.Drawing.Point(41, 300);
-            this.labelteste.Name = "labelteste";
-            this.labelteste.Size = new System.Drawing.Size(54, 25);
-            this.labelteste.TabIndex = 16;
-            this.labelteste.Text = "Nivel";
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(488, 384);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 37);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Mostrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lista
+            // 
+            this.lista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeUsuario,
+            this.Mes,
+            this.horas,
+            this.media});
+            this.lista.Location = new System.Drawing.Point(345, 19);
+            this.lista.Name = "lista";
+            this.lista.Size = new System.Drawing.Size(443, 150);
+            this.lista.TabIndex = 17;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.HeaderText = "Nome";
+            this.NomeUsuario.Name = "NomeUsuario";
+            // 
+            // Mes
+            // 
+            this.Mes.HeaderText = "Mes";
+            this.Mes.Name = "Mes";
+            // 
+            // horas
+            // 
+            this.horas.HeaderText = "Total_Horas";
+            this.horas.Name = "horas";
+            // 
+            // media
+            // 
+            this.media.HeaderText = "Media";
+            this.media.Name = "media";
             // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelteste);
+            this.Controls.Add(this.lista);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.timeHours);
             this.Controls.Add(this.dateDay);
             this.Controls.Add(this.label7);
@@ -206,6 +249,7 @@
             this.Text = "Tarefas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tarefas_FormClosed);
             this.Load += new System.EventHandler(this.Tarefas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.lista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,6 +276,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox dateDay;
         private System.Windows.Forms.TextBox timeHours;
-        private System.Windows.Forms.Label labelteste;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView lista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn media;
     }
 }

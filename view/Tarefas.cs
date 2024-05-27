@@ -34,7 +34,7 @@ namespace GerenciadoEstudo.view {
             try {
                  string Mouth = DateTime.Now.Month.ToString();
                 conecta.Open();
-                nome = getNameBD();
+        
 
                  id = GetID();
                 cmd.Connection = conecta;
@@ -67,26 +67,7 @@ namespace GerenciadoEstudo.view {
             }
         }
 
-        public string getNameBD() {
-            string query = "SELECT NOME FROM USUARIO"; 
-            SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
-            SqlCommand getName = new SqlCommand(query,conecta);
-            try {
-                conecta.Open();
-                SqlDataAdapter dt = new SqlDataAdapter(getName);
-                DataTable tb = new DataTable();
-                dt.Fill(tb);
-                foreach(DataRow dr in tb.Rows) {
-                    if (dr["Nome"].Equals(nome))
-                        return dr["NOME"].ToString();
-                } 
-            }catch(Exception ex) {
-                MessageBox.Show("getNameBD: " + ex.Message);
-            } finally {
-                conecta.Close();
-            }
-            return "";
-        }
+     
 
         public int GetID() {
             SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
@@ -103,7 +84,7 @@ namespace GerenciadoEstudo.view {
                 DataTable colum = new DataTable();
                 dt.Fill(colum);
                 foreach (DataRow linha in colum.Rows) {
-                    labelteste.Text =linha["IDUSUARIO"].ToString();
+                   
                     return  (int)linha["IDUSUARIO"];
                    
 
@@ -119,13 +100,45 @@ namespace GerenciadoEstudo.view {
         }
 
         private void Tarefas_Load(object sender, EventArgs e) {
-            nome = getNameBD();
+            
             id = GetID();
             labelNome.Text = nome;
         }
 
         private void Tarefas_FormClosed(object sender, FormClosedEventArgs e) {
             BDConnection.DesconectaBD();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
+            SqlCommand comando = new SqlCommand();
+            string query = "SELECT NOME, MES , SUM(HORAS) AS TOTAL_HORAS,ROUND(AVG(HORAS),2) AS MEDIA FROM MATERIA WHERE FK_USUARIO = @ID GROUP BY NOME,MES ";
+            try {
+                int Mes = DateTime.Now.Month;
+                id = GetID();
+                conecta.Open();
+                comando.Connection = conecta;
+                comando.CommandText = query;
+                comando.Parameters.AddWithValue("@ID", id);
+                comando.ExecuteNonQuery();
+                SqlDataAdapter adpter = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                adpter.Fill(dt);
+                foreach(DataRow listasDados in dt.Rows) {
+                    lista.Rows.Add(listasDados.ItemArray);
+                   
+
+                }
+                
+
+
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            } finally {
+                conecta.Close();
+                comando.Dispose();
+            }
+
         }
     }
 }
