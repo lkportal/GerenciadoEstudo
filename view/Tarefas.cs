@@ -12,6 +12,8 @@ using GerenciadoEstudo.model;
 using GerenciadoEstudo.controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using System.Data.Common;
+using System.Globalization;
+using System.Threading;
 
 namespace GerenciadoEstudo.view {
     public partial class Tarefas : Form {
@@ -32,15 +34,18 @@ namespace GerenciadoEstudo.view {
                 "@DETALHES,@FK_USUARIO,@DIA,@MES,@HORAS)";
            
             try {
-                 string Mouth = DateTime.Now.Month.ToString();
+                
                 conecta.Open();
-        
-
+                DateTime date = DateTime.Now;
+                CultureInfo culture = new CultureInfo("pt-BR");
+                string mes = culture.DateTimeFormat.GetMonthName(date.Month);
+               
+                
                  id = GetID();
                 cmd.Connection = conecta;
                 cmd.CommandText = queryInsert;
 
-                materia = new Materia(txtMateria.Text, dateDay.Text, double.Parse(timeHours.Text), Mouth, txtPlataforma.Text, txtDescricao.Text);
+                materia = new Materia(txtMateria.Text, dateDay.Text, double.Parse(timeHours.Text), mes, txtPlataforma.Text, txtDescricao.Text);
                 cmd.Parameters.AddWithValue("@NOME",materia.NomeMateria );
                 cmd.Parameters.AddWithValue("@PLATAFORMA_ESTUDO", materia.Plataforma);
                 cmd.Parameters.AddWithValue("@DETALHES", materia.Detalhes);
@@ -110,9 +115,10 @@ namespace GerenciadoEstudo.view {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            lista.Rows.Clear();
             SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
             SqlCommand comando = new SqlCommand();
-            string query = "SELECT NOME, MES , SUM(HORAS) AS TOTAL_HORAS,ROUND(AVG(HORAS),2) AS MEDIA FROM MATERIA WHERE FK_USUARIO = @ID GROUP BY NOME,MES ";
+            string query = "SELECT NOME,DIA, MES , HORAS AS Horas_Estudadas FROM MATERIA WHERE FK_USUARIO = @ID  ";
             try {
                 int Mes = DateTime.Now.Month;
                 id = GetID();
@@ -139,6 +145,12 @@ namespace GerenciadoEstudo.view {
                 comando.Dispose();
             }
 
+        }
+
+        private void labelVolta_Click(object sender, EventArgs e) {
+            Close();
+            Thread t = new Thread(() => Application.Run(new Form1()));
+            t.Start();
         }
     }
 }

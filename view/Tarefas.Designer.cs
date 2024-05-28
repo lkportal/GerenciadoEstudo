@@ -43,9 +43,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.DataGridView();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelVolta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,18 +197,23 @@
             this.lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeUsuario,
+            this.data,
             this.Mes,
-            this.horas,
-            this.media});
-            this.lista.Location = new System.Drawing.Point(345, 19);
+            this.horas});
+            this.lista.Location = new System.Drawing.Point(330, 218);
             this.lista.Name = "lista";
-            this.lista.Size = new System.Drawing.Size(443, 150);
+            this.lista.Size = new System.Drawing.Size(444, 150);
             this.lista.TabIndex = 17;
             // 
             // NomeUsuario
             // 
             this.NomeUsuario.HeaderText = "Nome";
             this.NomeUsuario.Name = "NomeUsuario";
+            // 
+            // data
+            // 
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
             // 
             // Mes
             // 
@@ -219,16 +225,23 @@
             this.horas.HeaderText = "Total_Horas";
             this.horas.Name = "horas";
             // 
-            // media
+            // labelVolta
             // 
-            this.media.HeaderText = "Media";
-            this.media.Name = "media";
+            this.labelVolta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolta.Location = new System.Drawing.Point(716, 9);
+            this.labelVolta.Name = "labelVolta";
+            this.labelVolta.Size = new System.Drawing.Size(72, 39);
+            this.labelVolta.TabIndex = 19;
+            this.labelVolta.Text = "Volta";
+            this.labelVolta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelVolta.Click += new System.EventHandler(this.labelVolta_Click);
             // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelVolta);
             this.Controls.Add(this.lista);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.timeHours);
@@ -246,6 +259,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelNome);
             this.Name = "Tarefas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tarefas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tarefas_FormClosed);
             this.Load += new System.EventHandler(this.Tarefas_Load);
@@ -279,8 +293,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView lista;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn media;
+        private System.Windows.Forms.Label labelVolta;
     }
 }

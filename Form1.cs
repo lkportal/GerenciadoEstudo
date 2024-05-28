@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GerenciadoEstudo.view;
+using System.Threading;
 
 namespace GerenciadoEstudo {
     public partial class Form1 : Form {
@@ -45,8 +46,10 @@ namespace GerenciadoEstudo {
                
                 foreach (DataRow linhas in dt.Rows) {
                     if (linhas["NOME"].ToString() == user.nome && linhas["IDENTIFICADOR"].ToString() == user.senha) {
-                        Tarefas tf = new Tarefas(linhas["NOME"].ToString());
-                        tf.ShowDialog();
+                        Close();
+                        Thread t = new Thread(() => Application.Run(new Tarefas(linhas["nome"].ToString())));
+                        t.Start();
+                        
                        
                     }
                     else {

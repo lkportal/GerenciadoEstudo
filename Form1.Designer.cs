@@ -73,6 +73,7 @@
             this.txtIdentificadorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificadorLogin.Location = new System.Drawing.Point(122, 249);
             this.txtIdentificadorLogin.Name = "txtIdentificadorLogin";
+            this.txtIdentificadorLogin.PasswordChar = '*';
             this.txtIdentificadorLogin.Size = new System.Drawing.Size(210, 31);
             this.txtIdentificadorLogin.TabIndex = 3;
             // 
@@ -181,6 +182,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

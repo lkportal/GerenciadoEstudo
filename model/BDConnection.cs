@@ -16,7 +16,7 @@ namespace GerenciadoEstudo.model {
             SqlConnection conecta = new SqlConnection(urlConnection);
             try {
                 conecta.Open();
-                MessageBox.Show(conecta.State.ToString());
+              
 
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -27,7 +27,7 @@ namespace GerenciadoEstudo.model {
             
             try {
                 conecta.Close();
-                MessageBox.Show(conecta.State.ToString());
+                
 
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
