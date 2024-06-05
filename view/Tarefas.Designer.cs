@@ -31,15 +31,12 @@
             this.btnCompletar = new System.Windows.Forms.Button();
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.txtPlataforma = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateDay = new System.Windows.Forms.TextBox();
-            this.timeHours = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.DataGridView();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,7 @@
             this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelVolta = new System.Windows.Forms.Label();
+            this.txtTempoEstudado = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,23 +104,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Materia";
             // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Data";
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(152, 144);
+            this.label6.Location = new System.Drawing.Point(40, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 25);
+            this.label6.Size = new System.Drawing.Size(175, 25);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Horas";
+            this.label6.Text = "Tempo Estudado";
             // 
             // txtPlataforma
             // 
@@ -160,25 +149,6 @@
             this.label7.Size = new System.Drawing.Size(111, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "Descrição";
-            // 
-            // dateDay
-            // 
-            this.dateDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDay.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dateDay.Location = new System.Drawing.Point(12, 163);
-            this.dateDay.Name = "dateDay";
-            this.dateDay.Size = new System.Drawing.Size(100, 24);
-            this.dateDay.TabIndex = 14;
-            // 
-            // timeHours
-            // 
-            this.timeHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeHours.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.timeHours.Location = new System.Drawing.Point(136, 163);
-            this.timeHours.MaxLength = 4;
-            this.timeHours.Name = "timeHours";
-            this.timeHours.Size = new System.Drawing.Size(100, 24);
-            this.timeHours.TabIndex = 15;
             // 
             // button1
             // 
@@ -236,22 +206,29 @@
             this.labelVolta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelVolta.Click += new System.EventHandler(this.labelVolta_Click);
             // 
+            // txtTempoEstudado
+            // 
+            this.txtTempoEstudado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTempoEstudado.Location = new System.Drawing.Point(83, 172);
+            this.txtTempoEstudado.Mask = "00.00";
+            this.txtTempoEstudado.Name = "txtTempoEstudado";
+            this.txtTempoEstudado.Size = new System.Drawing.Size(52, 29);
+            this.txtTempoEstudado.TabIndex = 20;
+            // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTempoEstudado);
             this.Controls.Add(this.labelVolta);
             this.Controls.Add(this.lista);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.timeHours);
-            this.Controls.Add(this.dateDay);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtPlataforma);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.btnCompletar);
@@ -281,15 +258,12 @@
         private System.Windows.Forms.Button btnCompletar;
         private System.Windows.Forms.TextBox txtMateria;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPlataforma;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox dateDay;
-        private System.Windows.Forms.TextBox timeHours;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView lista;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
@@ -297,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;
         private System.Windows.Forms.Label labelVolta;
+        private System.Windows.Forms.MaskedTextBox txtTempoEstudado;
     }
 }

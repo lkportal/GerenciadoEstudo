@@ -45,7 +45,8 @@ namespace GerenciadoEstudo.view {
                 cmd.Connection = conecta;
                 cmd.CommandText = queryInsert;
 
-                materia = new Materia(txtMateria.Text, dateDay.Text, double.Parse(timeHours.Text), mes, txtPlataforma.Text, txtDescricao.Text);
+                materia = new Materia(txtMateria.Text, date.ToShortDateString()
+                    , double.Parse(txtTempoEstudado.Text), mes, txtPlataforma.Text, txtDescricao.Text);
                 cmd.Parameters.AddWithValue("@NOME",materia.NomeMateria );
                 cmd.Parameters.AddWithValue("@PLATAFORMA_ESTUDO", materia.Plataforma);
                 cmd.Parameters.AddWithValue("@DETALHES", materia.Detalhes);
@@ -66,8 +67,8 @@ namespace GerenciadoEstudo.view {
                 txtMateria.Text = "";
                 txtPlataforma.Text = "";
                 txtDescricao.Text = "";
-                dateDay.Text = "";
-                timeHours.Text = "";
+                txtTempoEstudado.Text = "";
+               
                 
             }
         }
@@ -152,5 +153,7 @@ namespace GerenciadoEstudo.view {
             Thread t = new Thread(() => Application.Run(new Form1()));
             t.Start();
         }
+
+       
     }
 }
