@@ -16,9 +16,12 @@ using System.Globalization;
 using System.Threading;
 
 namespace GerenciadoEstudo.view {
+    
     public partial class Tarefas : Form {
         string nome;
         int id;
+        SqlConnection conecta;
+        SqlCommand cmd;
         public Tarefas(string dados) {
             InitializeComponent();
             nome = dados;
@@ -26,8 +29,8 @@ namespace GerenciadoEstudo.view {
      
 
         private void btnCompletar_Click(object sender, EventArgs e) {
-            SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
-            SqlCommand cmd = new SqlCommand();
+            conecta = new SqlConnection(BDConnection.urlConnection);
+            cmd = new SqlCommand();
             Materia materia;
             string queryInsert = "INSERT INTO MATERIA(NOME,PLATAFORMA_ESTUDO," +
                 "DETALHES,FK_USUARIO,DIA,MES,HORAS) VALUES (@NOME,@PLATAFORMA_ESTUDO," +
@@ -117,9 +120,9 @@ namespace GerenciadoEstudo.view {
 
         private void button1_Click(object sender, EventArgs e) {
             lista.Rows.Clear();
-            SqlConnection conecta = new SqlConnection(BDConnection.urlConnection);
+            conecta = new SqlConnection(BDConnection.urlConnection);
             SqlCommand comando = new SqlCommand();
-            string query = "SELECT NOME,DIA, MES , HORAS AS Horas_Estudadas FROM MATERIA WHERE FK_USUARIO = @ID  ";
+            string query = "SELECT IDMATERIA, NOME,DIA, MES , HORAS AS Horas_Estudadas FROM MATERIA WHERE FK_USUARIO = @ID  ";
             try {
                 int Mes = DateTime.Now.Month;
                 id = GetID();
@@ -154,6 +157,28 @@ namespace GerenciadoEstudo.view {
             t.Start();
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e) {
+            
+            string query = "DELETE FROM MATERIA WHERE IDMATERIA = @ID";
+            conecta = new SqlConnection(BDConnection.urlConnection);
+            cmd = new SqlCommand(query, conecta);
        
+           
+            try {
+                conecta.Open();
+                int indice = (int) lista.SelectedRows[0].Cells[0].Value;
+                cmd.Parameters.AddWithValue("@ID", indice);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Dados Excluido");
+            
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            } finally {
+                conecta.Close();
+                cmd.Dispose();
+                lista.ClearSelection();
+            }
+
+        }
     }
 }

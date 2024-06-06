@@ -39,12 +39,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.DataGridView();
+            this.labelVolta = new System.Windows.Forms.Label();
+            this.txtTempoEstudado = new System.Windows.Forms.MaskedTextBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.idmateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelVolta = new System.Windows.Forms.Label();
-            this.txtTempoEstudado = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,7 +155,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(488, 384);
+            this.button1.Location = new System.Drawing.Point(545, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 37);
             this.button1.TabIndex = 16;
@@ -163,9 +165,11 @@
             // 
             // lista
             // 
+            this.lista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.lista.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lista.ColumnHeadersHeight = 20;
             this.lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idmateria,
             this.NomeUsuario,
             this.data,
             this.Mes,
@@ -174,26 +178,6 @@
             this.lista.Name = "lista";
             this.lista.Size = new System.Drawing.Size(444, 150);
             this.lista.TabIndex = 17;
-            // 
-            // NomeUsuario
-            // 
-            this.NomeUsuario.HeaderText = "Nome";
-            this.NomeUsuario.Name = "NomeUsuario";
-            // 
-            // data
-            // 
-            this.data.HeaderText = "Data";
-            this.data.Name = "data";
-            // 
-            // Mes
-            // 
-            this.Mes.HeaderText = "Mes";
-            this.Mes.Name = "Mes";
-            // 
-            // horas
-            // 
-            this.horas.HeaderText = "Total_Horas";
-            this.horas.Name = "horas";
             // 
             // labelVolta
             // 
@@ -215,11 +199,48 @@
             this.txtTempoEstudado.Size = new System.Drawing.Size(52, 29);
             this.txtTempoEstudado.TabIndex = 20;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(387, 384);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(144, 37);
+            this.btnExcluir.TabIndex = 21;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // idmateria
+            // 
+            this.idmateria.HeaderText = "ID";
+            this.idmateria.Name = "idmateria";
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.HeaderText = "Nome";
+            this.NomeUsuario.Name = "NomeUsuario";
+            // 
+            // data
+            // 
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
+            // 
+            // Mes
+            // 
+            this.Mes.HeaderText = "Mes";
+            this.Mes.Name = "Mes";
+            // 
+            // horas
+            // 
+            this.horas.HeaderText = "Total_Horas";
+            this.horas.Name = "horas";
+            // 
             // Tarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.txtTempoEstudado);
             this.Controls.Add(this.labelVolta);
             this.Controls.Add(this.lista);
@@ -266,11 +287,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView lista;
+        private System.Windows.Forms.Label labelVolta;
+        private System.Windows.Forms.MaskedTextBox txtTempoEstudado;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;
-        private System.Windows.Forms.Label labelVolta;
-        private System.Windows.Forms.MaskedTextBox txtTempoEstudado;
     }
 }
