@@ -9,3 +9,14 @@ D:\Documentos\Projetos Geral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoE
 D:\Documentos\Projetos Geral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.exe
 D:\Documentos\Projetos Geral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.pdb
 D:\Documentos\Projetos Geral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.view.Tarefas.resources
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\bin\Debug\GerenciadoEstudo.exe.config
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\bin\Debug\GerenciadoEstudo.exe
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\bin\Debug\GerenciadoEstudo.pdb
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.csproj.AssemblyReference.cache
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.Form1.resources
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.Properties.Resources.resources
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.view.Tarefas.resources
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.csproj.GenerateResource.cache
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.csproj.CoreCompileInputs.cache
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.exe
+D:\Documentos\csharp_ProjetosGeral\RotinaEstudo\GerenciadoEstudo\obj\Debug\GerenciadoEstudo.pdb

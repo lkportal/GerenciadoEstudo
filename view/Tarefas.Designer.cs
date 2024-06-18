@@ -36,21 +36,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.DataGridView();
-            this.labelVolta = new System.Windows.Forms.Label();
-            this.txtTempoEstudado = new System.Windows.Forms.MaskedTextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.listaRelatorio = new System.Windows.Forms.DataGridView();
-            this.mesEstudado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasEstudadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRelatorioMes = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Rotinas = new System.Windows.Forms.TabPage();
-            this.Informaçoes = new System.Windows.Forms.TabPage();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelVolta = new System.Windows.Forms.Label();
+            this.txtTempoEstudado = new System.Windows.Forms.MaskedTextBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.listaRelatorio = new System.Windows.Forms.DataGridView();
+            this.btnRelatorioMes = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Rotinas = new System.Windows.Forms.TabPage();
+            this.Informaçoes = new System.Windows.Forms.TabPage();
+            this.horasInterval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mesEstudado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaRelatorio)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -189,6 +190,26 @@
             this.lista.Size = new System.Drawing.Size(786, 222);
             this.lista.TabIndex = 17;
             // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.HeaderText = "Nome";
+            this.NomeUsuario.Name = "NomeUsuario";
+            // 
+            // data
+            // 
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
+            // 
+            // Mes
+            // 
+            this.Mes.HeaderText = "Mes";
+            this.Mes.Name = "Mes";
+            // 
+            // horas
+            // 
+            this.horas.HeaderText = "Total_Horas";
+            this.horas.Name = "horas";
+            // 
             // labelVolta
             // 
             this.labelVolta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,29 +247,15 @@
             this.listaRelatorio.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.listaRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaRelatorio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.horasInterval,
+            this.minu,
             this.mesEstudado,
-            this.ano,
-            this.horasEstudadas});
+            this.ano});
             this.listaRelatorio.Location = new System.Drawing.Point(421, 281);
             this.listaRelatorio.Name = "listaRelatorio";
             this.listaRelatorio.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.listaRelatorio.Size = new System.Drawing.Size(363, 170);
             this.listaRelatorio.TabIndex = 23;
-            // 
-            // mesEstudado
-            // 
-            this.mesEstudado.HeaderText = "Mes";
-            this.mesEstudado.Name = "mesEstudado";
-            // 
-            // ano
-            // 
-            this.ano.HeaderText = "Ano";
-            this.ano.Name = "ano";
-            // 
-            // horasEstudadas
-            // 
-            this.horasEstudadas.HeaderText = "HorasTotais";
-            this.horasEstudadas.Name = "horasEstudadas";
             // 
             // btnRelatorioMes
             // 
@@ -307,25 +314,25 @@
             this.Informaçoes.Text = "Informaçoes";
             this.Informaçoes.UseVisualStyleBackColor = true;
             // 
-            // NomeUsuario
+            // horasInterval
             // 
-            this.NomeUsuario.HeaderText = "Nome";
-            this.NomeUsuario.Name = "NomeUsuario";
+            this.horasInterval.HeaderText = "Horas";
+            this.horasInterval.Name = "horasInterval";
             // 
-            // data
+            // minu
             // 
-            this.data.HeaderText = "Data";
-            this.data.Name = "data";
+            this.minu.HeaderText = "Minutos";
+            this.minu.Name = "minu";
             // 
-            // Mes
+            // mesEstudado
             // 
-            this.Mes.HeaderText = "Mes";
-            this.Mes.Name = "Mes";
+            this.mesEstudado.HeaderText = "Mes";
+            this.mesEstudado.Name = "mesEstudado";
             // 
-            // horas
+            // ano
             // 
-            this.horas.HeaderText = "Total_Horas";
-            this.horas.Name = "horas";
+            this.ano.HeaderText = "Ano";
+            this.ano.Name = "ano";
             // 
             // Tarefas
             // 
@@ -375,9 +382,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridView listaRelatorio;
         private System.Windows.Forms.Button btnRelatorioMes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mesEstudado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ano;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horasEstudadas;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Rotinas;
         private System.Windows.Forms.TabPage Informaçoes;
@@ -385,5 +389,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasInterval;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesEstudado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ano;
     }
 }

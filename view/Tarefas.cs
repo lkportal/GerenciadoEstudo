@@ -184,7 +184,7 @@ namespace GerenciadoEstudo.view {
 
         private void btnRelatorioMes_Click(object sender, EventArgs e) {
             listaRelatorio.Rows.Clear();
-            string query = "SELECT MES,ANO,SUM(HORAS) AS HORAS FROM MATERIA GROUP BY MES,ANO";
+            string query = "SELECT \r\n    CAST(SUM(horas) AS INT) AS Horas,\r\n    CAST((SUM(horas) - CAST(SUM(horas) AS INT)) * 60 AS INT) AS Minutos,mes,ano\r\nFROM \r\n    materia\r\ngroup by mes,ano\r\n\r\n";
             using (conecta = new SqlConnection(BDConnection.urlConnection))
             using (cmd = new SqlCommand(query, conecta))
             using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
