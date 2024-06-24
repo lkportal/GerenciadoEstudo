@@ -123,7 +123,7 @@ namespace GerenciadoEstudo.view {
             lista.Rows.Clear();
             conecta = new SqlConnection(BDConnection.urlConnection);
             SqlCommand comando = new SqlCommand();
-            string query = "SELECT  NOME,DIA, MES , HORAS AS Horas_Estudadas FROM MATERIA WHERE FK_USUARIO = @ID  ";
+            string query = "SELECT TOP 10  NOME,DIA, MES , HORAS AS Horas_Estudadas FROM MATERIA WHERE FK_USUARIO = @ID ORDER BY IDMATERIA DESC  ";
             try {
                 int Mes = DateTime.Now.Month;
                 id = GetID();
@@ -205,6 +205,18 @@ namespace GerenciadoEstudo.view {
                     conecta.Close();
                 }
 
+        }
+
+        private int GetPts() {
+            try {
+                BDConnection.ConectaBD();
+            } catch (SqlException ex) {
+                MessageBox.Show(ex.Message);
+            } finally {
+                BDConnection.DesconectaBD();
+            }
+
+            return 0;
         }
     }
 }
